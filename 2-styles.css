@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+input[type="checkbox"] {
+  display: none;
+}
+.toggle {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 45px;
+}
+.toggle-label {
+  position: relative;
+  background-color: #ebebeb;
+  width: 90%;
+  height: 100%;
+  border: 2px solid #cdcdcd;
+  border-radius: 100px;
+  transition: 0.5s;
+}
+.toggle-label .toggle-switch {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #cdcdcd;
+  top: -4px;
+  left: -5px;
+  background-color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input:checked + .toggle-label .toggle-switch {
+  transform: translateX(90px);
+}
+input:checked + .toggle-label {
+  background-color: #e1013c;
+}
+.toggle-inner {
+  margin-top: 4px;
+  margin-left: 20px;
+}
+.toggle-label .toggle-inner::before,
+.toggle-label .toggle-inner::after {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.toggle-label .toggle-inner::before {
+  content: "Yes";
+  color: #fff;
+  opacity: 0;
+}
+.toggle-label .toggle-inner::after {
+  content: "No";
+  color: #c3c3c3;
+}
+input:checked + .toggle-label .toggle-inner::before {
+  opacity: 1;
+}
+input:checked + .toggle-label .toggle-inner::after {
+  opacity: 0;
+}

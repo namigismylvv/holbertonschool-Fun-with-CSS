@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h2 {
+  margin: 10px 20px;
+}
+a {
+  color: #a71a39;
+  text-decoration: none;
+  position: relative;
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.2px;
+  top: 25px;
+  left: 0;
+  background-color: #a71a39;
+  transition: 0.5s ease-in-out;
+}
+a:hover::after {
+  width: 100%;
+}
