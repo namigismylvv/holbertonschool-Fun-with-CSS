@@ -1,0 +1,82 @@
+.menu {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.menu-open {
+  display: none;
+}
+.menu-open-button,
+a {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #c81938;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.menu-open-button .menu-line {
+  position: absolute;
+  content: "";
+  left: 16.5px;
+  width: 35%;
+  background-color: white;
+  height: 3px;
+  text-align: center;
+  transition: 0.1s;
+}
+.menu-open-button .menu-line-1 {
+  top: 16.8px;
+}
+
+.menu-open-button .menu-line-2 {
+  top: 24px;
+}
+.menu-open-button .menu-line-3 {
+  bottom: 15px;
+}
+.menu-open-button + .menu-item{
+margin-top: 10px;
+}
+.menu-item {
+  color: white;
+  border: 1px solid #c81938;
+  display: none;
+}
+.menu-item i {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+}
+.menu-item:hover {
+  background-color: #fff;
+  color: #c81938;
+}
+
+.menu-open:checked ~ .menu-item {
+    display: block;
+}
+.menu-open:checked + .menu-open-button {
+  transform: scale(1.2);
+}
+.menu-open:checked ~ .menu-open-button .menu-line-1 {
+    transform: rotate(-50deg);
+}
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+    transform: rotate(50deg);
+
+}
+.menu-open:checked ~ .menu-open-button .menu-line-1,
+.menu-open:checked ~ .menu-open-button .menu-line-3 {
+    top: 24px;
+    height: 1.5px;
+}
+.menu-open:checked ~ .menu-open-button .menu-line-2{
+    display: none;
+}
+
+
+
